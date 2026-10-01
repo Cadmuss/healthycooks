@@ -1,0 +1,11 @@
+HEALTHYCOOKS — CLAUDE CODE HANDOFF
+
+1. Extract this ZIP and open the healthycooks folder in Claude Code.
+2. Read CLAUDE.md and docs/HANDOFF.md, or ask Claude to read them.
+3. With Node.js >=20 installed, run npm run dev in this folder.
+4. Open http://localhost:5173. No npm install or API key is needed.
+5. Use FIRST_PROMPT.txt for the first conversation.
+
+Includes current application, photos, map, sources, SQL proposal, portfolio docs and project decisions.
+Does NOT include the complete chat transcript, account exports, hosting access or credentials.
+The app is portable; the existing private Sites deployment is not transferred by extracting the ZIP.
