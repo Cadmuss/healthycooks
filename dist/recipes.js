@@ -1914,3 +1914,107 @@ window.RECIPES = [
     ]
   }
 ];
+
+window.RECIPES.push({
+  id: "lemon-paprika-chicken", country: "United States", code: "US", flag: "🇺🇸", lat: 39.8, lon: -98.6, region: "NORTH AMERICA",
+  intro: "Easy weeknight cooking: one pan, a few cheap ingredients and plenty of leftovers.",
+  title: "One-pan lemon-paprika chicken & potatoes",
+  description: "An American-style one-pan dinner: juicy chicken thigh, golden potatoes and bright broccoli, finished with lemon. Easy to make ahead.",
+  image: "assets/chicken potato.avif", imageAlt: "Related roasted chicken with potatoes and broccoli; serving inspiration, not this exact recipe.",
+  minutes: 40, timeLabel: "40 min, one pan", tag: "Cook once, eat twice", servings: 2, visualGuide: true,
+  nutrition: { kcal: 510, protein: 45, carbs: 44, fat: 18, fibre: 8 },
+  ingredients: [
+    [400, "g", "chicken thigh, cut into 4 cm pieces"],
+    [400, "g", "potatoes, cut into 2 cm chunks"],
+    [250, "g", "broccoli florets"],
+    [10, "g", "garlic, finely chopped"],
+    [100, "g", "lemon (juice, plus a little zest if you like)"],
+    [15, "ml", "canola oil"],
+    [2, "g", "ground paprika (about 1 tsp per 2 portions)"],
+    [2, "g", "salt, plus black pepper to taste"]
+  ],
+  allergens: "No major allergens in the listed ingredients. Check labels on spices for other allergens.",
+  swap: "Ingredients are a guide. Use less oil, garlic or lemon to taste, swap some potato for sweet potato or carrot, or use another green vegetable. Displayed nutrition and cost refer to the listed quantities.",
+  finalDish: "One portion: about half the chicken, potatoes and broccoli, with a squeeze of lemon.",
+  equipment: "Knife, two chopping boards (one only for raw chicken), a large non-stick pan with a lid, a spoon or tongs. An air fryer is useful for reheating.",
+  mediaNote: "Technique videos can be added to each step.",
+  timeNote: "About 40 minutes from start to plate, including cutting.",
+  prep: "For meal prep, cook the broccoli a little less than usual and add the lemon after reheating. Keep the chicken and potatoes together and the broccoli in its own compartment if you can.",
+  steps: [
+    { title: "Wash up & set up", uses: [], short: "Wash hands, set out two boards and a large lidded pan.", seconds: 0,
+      directions: ["Wash your hands with soap. Use one chopping board only for raw chicken.", "Set out a large non-stick pan with a lid, a knife, a spoon and a bowl for each ingredient."],
+      appearance: "A clear counter, two boards (one for raw chicken only) and everything within reach." },
+    { title: "Cut potatoes & garlic", uses: [1, 3], short: "Cut potatoes into small even chunks and chop the garlic.", seconds: 0,
+      directions: ["Scrub the potatoes. Leave the skin on and cut into chunks about 2 cm wide (about a thumb's width).", "Finely chop the garlic and keep it in a small bowl."],
+      appearance: "Potato pieces roughly the same size, so they cook at the same speed." },
+    { title: "Cut broccoli & lemon", uses: [2, 4], short: "Cut florets, halve the lemon.", seconds: 0,
+      directions: ["Cut the broccoli into florets about 3 to 4 cm wide.", "Halve the lemon. Set it aside for the end."],
+      appearance: "Florets of similar size, with no thick stalk pieces." },
+    { title: "Cut & season chicken", uses: [0, 6, 7], short: "Cut the thighs, pat dry and season on the raw-chicken board.", seconds: 0,
+      directions: ["On the raw-chicken board, trim any large lumps of fat and cut the thighs into 4 cm pieces.", "Pat dry with kitchen paper, then toss with the paprika, salt and a little pepper.", "Wash hands, the board and the knife with hot soapy water before touching anything else."],
+      appearance: "Evenly sized pieces, lightly coated in paprika. Hands and board washed." },
+    { title: "Cook the potatoes", uses: [1, 5], short: "Medium heat, covered, about 10 minutes.", seconds: 600, timerLabel: "Potatoes, covered",
+      directions: ["Heat the oil in the pan on medium heat. Add the potatoes in a single layer.", "Cover and cook for about 10 minutes. Lift the lid and stir about every 3 minutes."],
+      appearance: "Edges are starting to turn golden and a knife tip goes in with a little resistance." },
+    { title: "Add the chicken", uses: [0, 3], short: "Chicken and garlic in, uncovered, about 11 minutes.", seconds: 660, timerLabel: "Chicken and potatoes",
+      cueLabel: "CHECK IT IS COOKED",
+      directions: ["Push the potatoes to the side. Add the chicken in a single layer so the pieces are not stacked. Stir the garlic in after 5 minutes.", "Cook uncovered on medium heat for about 11 minutes, turning the chicken every 3 to 4 minutes.", "Cut into the thickest piece to check before moving on."],
+      appearance: "Chicken is golden outside. Cut the thickest piece: no pink, juices run clear, and it is hot all the way through. Potatoes are tender and golden." },
+    { title: "Add broccoli & lemon", uses: [2, 4], short: "Broccoli and a splash of water, covered, 3 to 4 minutes.", seconds: 210, timerLabel: "Broccoli, covered",
+      directions: ["Add the broccoli and about 2 tablespoons of water. Be careful: it will spit and steam.", "Cover and cook for 3 to 4 minutes, until just tender.", "Turn off the heat. Squeeze over the lemon juice and stir."],
+      appearance: "Broccoli is bright green and a fork goes in easily but it still holds its shape." },
+    { title: "Serve or pack for later", uses: [], short: "Eat now, or cool quickly and store.", seconds: 0,
+      directions: ["Serve half now with extra lemon if you like.", "For later: spread the rest into a shallow container, cool, and refrigerate within 2 hours."],
+      appearance: "Hot, steaming food for now, or a shallow container cooling quickly, with the date written on it." }
+  ],
+  prepCards: [
+    { title: "01 / Cook for later", text: "Make a double batch by raising the portions. Cook the broccoli for the shorter time so it stays firm when reheated. Squeeze the lemon on after reheating." },
+    { title: "02 / Cool & store", text: "Spread cooked food in shallow containers, cool, and refrigerate within 2 hours. Keep the fridge at 4°C or below. For this pilot, eat refrigerated portions the next day and freeze portions for later." },
+    { title: "03 / Reheat safely", text: "Reheat until steaming hot all the way through, stirring or turning once. An air fryer or hot pan crisps the potatoes best. The microwave is fine but gives softer potatoes. Reheat only what you will eat." },
+    { title: "04 / Keep it fresh", text: "Keep the broccoli apart from the chicken and potatoes if you can, and add fresh lemon when you eat. Label each container with the cooking date." }
+  ]
+});
+
+/* ===== US recipe: reuse existing technique videos ===== */
+(function(){
+  const all=window.RECIPES.flatMap(r=>r.steps.flatMap(s=>[...(s.videos||[]),...(s.methods||[]).flatMap(m=>m.videos||[])]));
+  const reuse=(id,extra)=>{const v=all.find(x=>x.id===id&&(extra.start===undefined||x.start===extra.start))||all.find(x=>x.id===id);return v?{...v,...extra}:null};
+  const us=window.RECIPES.find(r=>r.id==='lemon-paprika-chicken');
+  const put=(i,v)=>{if(us&&v)us.steps[i].videos=[v]};
+  put(1,reuse('qjzTZiY1vmk',{scope:'Garlic chopping only. Cut the potatoes as described in the instructions.',caption:'Garlic only: finely chop.'}));
+  put(2,reuse('CRYQeHVkh8E',{scope:'Broccoli cutting only. The lemon is simply halved.',caption:'Broccoli only: cut into florets.'}));
+  put(3,reuse('-l3TxkEldPs',{start:30,scope:'Cubing chicken only. The video uses chicken breast; trim large lumps of fat from thighs first. Seasoning is the next action.',caption:'Chicken only: cut into pieces.'}));
+  put(6,reuse('hZsLAZMIFBQ',{scope:'Full steaming video. It repeats cutting that is already done. Our pan method adds a splash of water and a lid.',caption:'Use for the steaming idea only; skip the cutting.'}));
+})();
+
+/* ===== US recipe: potato cooking methods + clearer broccoli step ===== */
+(function(){
+  const us=window.RECIPES.find(r=>r.id==='lemon-paprika-chicken');if(!us)return;
+  Object.assign(us.steps[4],{
+    title:'Cook the potatoes', defaultMethod:'pan',
+    methods:[
+      {id:'pan',label:'Pan',hint:'Covered · about 10 min',seconds:600,timerLabel:'Potatoes, covered',
+        short:'Medium heat, covered, about 10 minutes.',
+        directions:['Heat the oil in the pan on medium heat. Add the potatoes in a single layer.','Cover and cook for about 10 minutes. Lift the lid and stir about every 3 minutes.'],
+        appearance:'Edges are starting to turn golden and a knife tip goes in with a little resistance.'},
+      {id:'air-fryer',label:'Air fryer',hint:'200°C · about 15 min',seconds:900,timerLabel:'Potatoes in the air fryer',
+        short:'Air fry at 200°C for about 15 minutes, shaking every 5 minutes.',
+        directions:['Toss the potatoes with 2 teaspoons of the oil and a pinch of salt.','Air fry at 200°C for about 15 minutes, shaking the basket every 5 minutes. Air fryers vary, so check at 15 minutes.','Keep the timer running and carry on with the next step while they finish.'],
+        appearance:'Golden on the outside and a knife tip goes in easily. If not, give them another 3 minutes.'},
+      {id:'boil',label:'Boil',hint:'No frying · about 10 min',seconds:600,timerLabel:'Potatoes, boiling',
+        short:'Boil about 10 minutes, then drain.',
+        directions:['Put the potatoes in a pot, cover with cold water and add a pinch of salt.','Bring to the boil, then turn the heat down to a gentle simmer. Start the timer and cook for about 10 minutes.','Drain well and let them steam dry for 2 minutes. They go into the chicken pan in the next step.'],
+        appearance:'A knife tip slides in easily, but the pieces still hold their shape and are not falling apart.'}
+    ]
+  });
+  Object.assign(us.steps[5],{
+    short:'Chicken and garlic in, uncovered, about 11 minutes.',
+    directions:['If the potatoes are in this pan, push them to the side. Otherwise, heat 1 teaspoon of oil in the pan on medium heat.','Add the chicken in a single layer so the pieces are not stacked. Stir the garlic in after 5 minutes.','Cook uncovered on medium heat for about 11 minutes, turning the chicken every 3 to 4 minutes.','If your potatoes were air-fried or boiled, add them to the pan for the last 4 minutes and stir so they pick up colour and flavour.','Cut into the thickest piece to check before moving on.']
+  });
+  Object.assign(us.steps[6],{
+    title:'Steam the broccoli, then add lemon',
+    short:'Broccoli and a splash of water, covered, 3 to 4 minutes. Lemon at the end.',
+    directions:['Add the broccoli and about 2 tablespoons of water. Be careful: it will spit and steam.','Cover and steam for 3 to 4 minutes, until just tender.','Turn off the heat. Squeeze over the lemon juice and stir.'],
+    timerLabel:'Broccoli, steaming'
+  });
+})();

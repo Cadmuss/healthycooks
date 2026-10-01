@@ -166,3 +166,46 @@
 [data-theme=dark] .method-facts,[data-theme=dark] .step-ingredients,[data-theme=dark] .cost-snapshot,[data-theme=dark] .in-pantry{background:#16293a;color:var(--ink)}
 [data-theme=dark] .cost-totals article:not(.cost-primary){background:#16293a;border-color:#2b4152;color:var(--ink)}
 [data-theme=dark] .steps-menu button:hover,[data-theme=dark] .steps-menu button[aria-current]{background:#1d3024}
+
+
+/* kitchen readability + glossary */
+.visual-kitchen .image-note,.visual-kitchen .method-sources,.visual-kitchen .step-count,.video-byline,.video-scope,.timer-label{font-size:14px}
+.glossary ul{margin:10px 0 0;padding-left:20px;font-size:15px;line-height:1.5}
+.glossary li{margin-bottom:8px}
+
+/* rice note, start over, print */
+.rice-fallback{margin:12px 0 0;padding:10px 12px;background:var(--sea);border-radius:10px;font-size:15px;line-height:1.5}
+.start-over{margin:8px 0 0}
+.print-only{display:none}
+@media print{
+ body>header,body>main,body>footer,#toast,#floating-timer,.dialog-top,.recipe-head,.recipe-tabs,.ingredients-layout .note-box,.print-btn,.servings-control .stepper{display:none!important}
+ .print-only{display:block;margin:0 0 12px}
+ dialog{position:static!important;inset:auto!important;width:100%!important;max-width:none!important;max-height:none!important;border:0!important;box-shadow:none!important;overflow:visible!important}
+ dialog:not([open]){display:none!important}
+ .ingredient{break-inside:avoid;padding:6px 0}
+}
+
+/* price note + dark mode (opt-in toggle) */
+.price-note{margin-top:16px}
+.theme-toggle{white-space:nowrap}
+:root[data-theme=dark]{color-scheme:dark;--ink:#e6edf1;--muted:#9fb1bd;--line:#2b4152;--sea:#183044;--white:#0f1f2c;--paper:#0d1b27}
+[data-theme=dark] body{background:#0a1620}
+[data-theme=dark] aside,[data-theme=dark] .recipe-card,[data-theme=dark] .dialog-top,[data-theme=dark] .close,[data-theme=dark] .recipe-tabs,[data-theme=dark] .stepper button,[data-theme=dark] .secondary,[data-theme=dark] .step-nav,[data-theme=dark] .visual-nav,[data-theme=dark] .steps-menu ol,[data-theme=dark] .steps-menu button,[data-theme=dark] dialog{background:#0f1f2c;color:var(--ink)}
+[data-theme=dark] .country-badge,[data-theme=dark] .method-picker button,[data-theme=dark] .availability,[data-theme=dark] .country-buttons button{background:#16293a;color:var(--ink);border-color:#2b4152}
+[data-theme=dark] .country-buttons button.selected,[data-theme=dark] .primary,[data-theme=dark] .approach,[data-theme=dark] .video-box,[data-theme=dark] #toast,[data-theme=dark] .step-rail button[aria-current],[data-theme=dark] .gap-number{background:#1f4361;color:#fff;border-color:#1f4361}
+[data-theme=dark] .primary.lime,[data-theme=dark] .lime{background:#d6f56c;color:#122739}
+[data-theme=dark] .method-picker button[aria-pressed=true]{background:#d6f56c;color:#122739;border-color:#d6f56c;box-shadow:none}
+[data-theme=dark] .method-note,[data-theme=dark] .method-sources,[data-theme=dark] .video-scope,[data-theme=dark] .clip-status,[data-theme=dark] .method-facts dt{color:#9fb1bd}
+[data-theme=dark] .cost-item,[data-theme=dark] .cost-notes{border-color:#2b4152}
+[data-theme=dark] #map-land path:not(.available):not(.selected){fill:#2a4256;stroke:#0f1f2c}
+
+/* dark mode: remaining light boxes */
+[data-theme=dark] .cue,[data-theme=dark] .appearance-section .cue{background:#1d3024;color:var(--ink)}
+[data-theme=dark] .cue p,[data-theme=dark] .cue b{color:var(--ink)}
+[data-theme=dark] .tag{background:#223a2a;color:#cfe8a0}
+[data-theme=dark] .progress span{background:#2b4152}
+[data-theme=dark] .step-rail{background:#0f1f2c}
+[data-theme=dark] .media-gap{background:#1d3024;border-color:#2f4a38}
+[data-theme=dark] .method-facts,[data-theme=dark] .step-ingredients,[data-theme=dark] .cost-snapshot,[data-theme=dark] .in-pantry{background:#16293a;color:var(--ink)}
+[data-theme=dark] .cost-totals article:not(.cost-primary){background:#16293a;border-color:#2b4152;color:var(--ink)}
+[data-theme=dark] .steps-menu button:hover,[data-theme=dark] .steps-menu button[aria-current]{background:#1d3024}
