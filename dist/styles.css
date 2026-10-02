@@ -209,3 +209,10 @@
 [data-theme=dark] .method-facts,[data-theme=dark] .step-ingredients,[data-theme=dark] .cost-snapshot,[data-theme=dark] .in-pantry{background:#16293a;color:var(--ink)}
 [data-theme=dark] .cost-totals article:not(.cost-primary){background:#16293a;border-color:#2b4152;color:var(--ink)}
 [data-theme=dark] .steps-menu button:hover,[data-theme=dark] .steps-menu button[aria-current]{background:#1d3024}
+
+
+/* favourites */
+.recipe-card{position:relative}
+.fav-btn{position:absolute;top:10px;right:10px;width:40px;height:40px;border-radius:50%;border:0;background:var(--white,#fff);color:#e0524d;font-size:22px;line-height:1;cursor:pointer;box-shadow:0 2px 10px #0003;z-index:2}
+.fav-btn[aria-pressed=true]{background:#e0524d;color:#fff}
+.fav-bar,.fav-empty{margin:0 0 14px}

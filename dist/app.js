@@ -118,3 +118,23 @@ renderTab=function(){_renderTab3();if(tab==='ingredients'){const c=$('.servings-
 
 /* ===== credits: US recipe videos ===== */
 $('#credits-body').insertAdjacentHTML('beforeend','<p><strong>One-pan lemon-paprika chicken</strong><br>Technique videos reused from other recipes: Jamie Oliver (garlic); Iowa State University Extension (broccoli cutting); Laura Fuentes (cubing chicken); Foods101withDeronda (steaming broccoli). Each step links its original video. These are independent technique references, not footage of this exact recipe.</p>');
+
+
+/* ===== Favourites (saved in this browser only) ===== */
+const FAV_KEY='hc:favourites';let showSavedOnly=false;
+function favList(){try{const a=JSON.parse(localStorage.getItem(FAV_KEY));return Array.isArray(a)?a:[]}catch{return[]}}
+function favSave(a){try{localStorage.setItem(FAV_KEY,JSON.stringify(a))}catch{}}
+function toggleFav(id){const a=favList(),i=a.indexOf(id);if(i>=0)a.splice(i,1);else a.push(id);favSave(a);refreshFavs()}
+function refreshFavs(){const favs=favList();
+ document.querySelectorAll('.fav-btn').forEach(b=>{const on=favs.includes(b.dataset.fav);b.textContent=on?'♥':'♡';b.setAttribute('aria-pressed',String(on));b.setAttribute('aria-label',(on?'Remove from':'Save to')+' favourites')});
+ document.querySelectorAll('.fav-dialog-btn').forEach(b=>{const on=favs.includes(b.dataset.fav);b.textContent=on?'♥ Saved':'♡ Save';b.setAttribute('aria-pressed',String(on))});
+ let shown=0;document.querySelectorAll('.recipe-card').forEach(c=>{const id=c.querySelector('[data-open]')?.dataset.open,hide=showSavedOnly&&!favs.includes(id);c.style.display=hide?'none':'';if(!hide)shown++});
+ const t=document.querySelector('.fav-filter');if(t){t.textContent=showSavedOnly?'Show all recipes':'Show saved only ('+favs.length+')';t.setAttribute('aria-pressed',String(showSavedOnly))}
+ const e=document.querySelector('.fav-empty');if(e)e.hidden=!(showSavedOnly&&shown===0)}
+document.querySelectorAll('.recipe-card').forEach(c=>{const id=c.querySelector('[data-open]')?.dataset.open;if(id&&!c.querySelector('.fav-btn'))c.insertAdjacentHTML('beforeend','<button type="button" class="fav-btn" data-fav="'+id+'"></button>')});
+const favHead=document.querySelector('#recipes .section-head');
+if(favHead)favHead.insertAdjacentHTML('afterend','<div class="fav-bar"><button type="button" class="text-button fav-filter"></button></div><p class="fav-empty image-note" hidden>No saved recipes yet. Tap the heart on a recipe to save it here.</p>');
+const _renderRecipeFav=renderRecipe;
+renderRecipe=function(){_renderRecipeFav();const close=document.querySelector('.dialog-top .close');if(close&&active&&!document.querySelector('.fav-dialog-btn'))close.insertAdjacentHTML('beforebegin','<button type="button" class="text-button fav-dialog-btn" data-fav="'+active.id+'"></button>');refreshFavs()};
+document.addEventListener('click',e=>{const f=e.target.closest('[data-fav]');if(f){toggleFav(f.dataset.fav);return}if(e.target.closest('.fav-filter')){showSavedOnly=!showSavedOnly;refreshFavs()}});
+refreshFavs();
