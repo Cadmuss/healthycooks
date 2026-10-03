@@ -117,7 +117,9 @@ const _renderTab3=renderTab;
 renderTab=function(){_renderTab3();if(tab==='ingredients'){const c=$('.servings-control');if(c&&!$('.ingredient-note'))c.insertAdjacentHTML('afterend','<p class="image-note ingredient-note">Ingredients are a guide. Swap or use less to suit your taste and budget. Nutrition and cost refer to the listed amounts.</p>')}};
 
 /* ===== credits: US recipe videos ===== */
-$('#credits-body').insertAdjacentHTML('beforeend','<p><strong>One-pan lemon-paprika chicken</strong><br>Technique videos reused from other recipes: Jamie Oliver (garlic); Iowa State University Extension (broccoli cutting); Laura Fuentes (cubing chicken); Foods101withDeronda (steaming broccoli). Each step links its original video. These are independent technique references, not footage of this exact recipe.</p>');
+/* ===== credits: recipe credits helper ===== */
+function addRecipeCredit(title,text){const body=$('#credits-body');if([...body.querySelectorAll('p > strong')].some(s=>s.textContent===title))return;const html='<p><strong>'+escapeHTML(title)+'</strong><br>'+text+'</p>',map=[...body.querySelectorAll('p')].find(p=>p.textContent.trim().startsWith('Map'));if(map)map.insertAdjacentHTML('beforebegin',html);else body.insertAdjacentHTML('beforeend',html)}
+addRecipeCredit('One-pan lemon-paprika chicken','Technique videos reused from other recipes: Jamie Oliver (garlic); Iowa State University Extension (broccoli cutting); Laura Fuentes (cubing chicken); Foods101withDeronda (steaming broccoli). Each step links its original video. These are independent technique references, not footage of this exact recipe.');
 
 
 /* ===== Favourites (saved in this browser only) ===== */
