@@ -140,3 +140,10 @@ const _renderRecipeFav=renderRecipe;
 renderRecipe=function(){_renderRecipeFav();const close=document.querySelector('.dialog-top .close');if(close&&active&&!document.querySelector('.fav-dialog-btn'))close.insertAdjacentHTML('beforebegin','<button type="button" class="text-button fav-dialog-btn" data-fav="'+active.id+'"></button>');refreshFavs()};
 document.addEventListener('click',e=>{const f=e.target.closest('[data-fav]');if(f){toggleFav(f.dataset.fav);return}if(e.target.closest('.fav-filter')){showSavedOnly=!showSavedOnly;refreshFavs()}});
 refreshFavs();
+
+
+/* ===== Deep links: /#recipe-id opens that recipe ===== */
+function openFromHash(){const id=decodeURIComponent(location.hash.slice(1));if(id&&recipe(id))openRecipe(id)}
+window.addEventListener('hashchange',openFromHash);
+$('#recipe-dialog').addEventListener('close',()=>{if(recipe(decodeURIComponent(location.hash.slice(1))))history.replaceState(null,'',location.pathname+location.search)});
+openFromHash();
