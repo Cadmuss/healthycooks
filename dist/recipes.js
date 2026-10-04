@@ -1920,7 +1920,7 @@ window.RECIPES.push({
   intro: "Easy weeknight cooking: one pan, a few cheap ingredients and plenty of leftovers.",
   title: "One-pan lemon-paprika chicken & potatoes",
   description: "An American-style one-pan dinner: juicy chicken thigh, golden potatoes and bright broccoli, finished with lemon. Easy to make ahead.",
-  image: "assets/chicken potato.avif", imageAlt: "Related roasted chicken with potatoes and broccoli; serving inspiration, not this exact recipe.",
+  image: "assets/chicken-potatoes.avif", imageAlt: "Related roasted chicken with potatoes and broccoli; serving inspiration, not this exact recipe.",
   minutes: 40, timeLabel: "40 min, one pan", tag: "Cook once, eat twice", servings: 2, visualGuide: true,
   nutrition: { kcal: 510, protein: 45, carbs: 44, fat: 18, fibre: 8 },
   ingredients: [
