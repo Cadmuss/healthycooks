@@ -2018,3 +2018,12 @@ window.RECIPES.push({
     timerLabel:'Broccoli, steaming'
   });
 })();
+
+
+/* ===== US recipe: potato cutting and pan-roasting videos ===== */
+(function(){
+  const us=window.RECIPES.find(r=>r.id==='lemon-paprika-chicken');if(!us)return;
+  us.steps[1].videos=[{id:'HO8H9JFlYmU',title:'How to Dice a Potato Like a Pro',creator:'Food Wishes',sourceUrl:'https://www.youtube.com/watch?v=HO8H9JFlYmU',note:'Short knife-skills reference. Cut the chunks about 2 cm wide as in the instructions.',start:0,end:null,verification:'Title and creator confirmed by the site owner; playback and exact excerpt review pending.',kind:'short',scope:'Potato dicing only. Cut chunks about 2 cm wide and keep the skins on, as in the instructions. Chop the garlic after.',caption:'Potatoes only: cut into even chunks.'}];
+  const pan=us.steps[4].methods&&us.steps[4].methods.find(m=>m.id==='pan');
+  if(pan)pan.videos=[{id:'Efmj0Apk5XQ',title:'Sauteed Potatoes. The best pan fried potatoes',creator:'Kitchen Sanctuary',sourceUrl:'https://www.youtube.com/watch?v=Efmj0Apk5XQ',note:'Watch only the pan-cooking part. Use our heat, timing and cover as written in the instructions.',start:94,end:null,verification:'Title and creator confirmed by the site owner; playback and exact excerpt review pending.',kind:'chapter',scope:'Pan-cooking potatoes only, starting at 1:34. Follow our heat and timing if they differ.',caption:'Pan method only: watch how the potatoes cook.'}];
+})();
