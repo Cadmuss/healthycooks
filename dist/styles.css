@@ -227,3 +227,7 @@
 .dialog-top .dialog-recipe-name{margin-right:auto;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .dialog-top .fav-dialog-btn,.dialog-top .send-link-btn{border:1px solid var(--line);border-radius:999px;padding:7px 14px;color:var(--ink);text-decoration:none;font-size:13px;white-space:nowrap;cursor:pointer;flex-shrink:0}
 .dialog-top .fav-dialog-btn:hover,.dialog-top .send-link-btn:hover{background:var(--sea)}
+
+
+/* second video in a step */
+.extra-video{margin-top:18px}

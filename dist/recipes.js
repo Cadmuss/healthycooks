@@ -2027,3 +2027,11 @@ window.RECIPES.push({
   const pan=us.steps[4].methods&&us.steps[4].methods.find(m=>m.id==='pan');
   if(pan)pan.videos=[{id:'Efmj0Apk5XQ',title:'Sauteed Potatoes. The best pan fried potatoes',creator:'Kitchen Sanctuary',sourceUrl:'https://www.youtube.com/watch?v=Efmj0Apk5XQ',note:'Watch only the pan-cooking part. Use our heat, timing and cover as written in the instructions.',start:94,end:null,verification:'Title and creator confirmed by the site owner; playback and exact excerpt review pending.',kind:'chapter',scope:'Pan-cooking potatoes only, starting at 1:34. Follow our heat and timing if they differ.',caption:'Pan method only: watch how the potatoes cook.'}];
 })();
+
+
+/* ===== US recipe: garlic video under the potato video, clearer chicken step title ===== */
+(function(){
+  const us=window.RECIPES.find(r=>r.id==='lemon-paprika-chicken');if(!us)return;
+  if(us.steps[1].videos)us.steps[1].videos.push({id:'qjzTZiY1vmk',title:'How to chop garlic',creator:'Jamie Oliver',sourceUrl:'https://www.youtube.com/watch?v=qjzTZiY1vmk',note:'One-minute knife-skills reference. Use the garlic quantity in this recipe.',start:0,end:null,verification:'Source and topic checked; playback and exact excerpt review pending.',kind:'short',scope:'Garlic chopping only. Use the garlic quantity in this recipe.',caption:'Garlic only: finely chop.'});
+  us.steps[5].title='Cook the chicken';
+})();

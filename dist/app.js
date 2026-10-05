@@ -119,7 +119,7 @@ renderTab=function(){_renderTab3();if(tab==='ingredients'){const c=$('.servings-
 /* ===== credits: US recipe videos ===== */
 /* ===== credits: recipe credits helper ===== */
 function addRecipeCredit(title,text){const body=$('#credits-body');if([...body.querySelectorAll('p > strong')].some(s=>s.textContent===title))return;const html='<p><strong>'+escapeHTML(title)+'</strong><br>'+text+'</p>',map=[...body.querySelectorAll('p')].find(p=>p.textContent.trim().startsWith('Map'));if(map)map.insertAdjacentHTML('beforebegin',html);else body.insertAdjacentHTML('beforeend',html)}
-addRecipeCredit('One-pan lemon-paprika chicken','Technique videos reused from other recipes: Jamie Oliver (garlic); Iowa State University Extension (broccoli cutting); Laura Fuentes (cubing chicken); Foods101withDeronda (steaming broccoli). Each step links its original video. These are independent technique references, not footage of this exact recipe.');
+addRecipeCredit('One-pan lemon-paprika chicken','Technique videos: Food Wishes (dicing potatoes); Jamie Oliver (chopping garlic); Kitchen Sanctuary (pan-cooking potatoes); Iowa State University Extension (broccoli cutting); Laura Fuentes (cubing chicken); Foods101withDeronda (steaming broccoli). Each step links its original video. These are independent technique references, not footage of this exact recipe.');
 
 
 /* ===== Favourites (saved in this browser only) ===== */
@@ -155,3 +155,14 @@ async function shareRecipe(id){const r=recipe(id);if(!r)return;const url=locatio
 const _renderRecipeShare=renderRecipe;
 renderRecipe=function(){_renderRecipeShare();const close=document.querySelector('.dialog-top .close');if(close&&active&&!document.querySelector('.send-link-btn'))close.insertAdjacentHTML('beforebegin','<button type="button" class="text-button send-link-btn" data-send-link="'+active.id+'">Share</button>')};
 document.addEventListener('click',e=>{const s=e.target.closest('[data-send-link]');if(s)shareRecipe(s.dataset.sendLink)});
+
+
+/* ===== Extra technique videos (a step can show more than one) ===== */
+function renderExtraVideos(){const s=activeStep(),box=document.querySelector('#technique-content');if(!s||!box||box.hidden||box.querySelector('.extra-video')||!s.videos||s.videos.length<2||!box.children.length)return;s.videos.slice(1).forEach((v,i)=>{box.insertAdjacentHTML('beforeend','<div class="extra-video"><p class="video-scope">'+escapeHTML(v.caption||v.scope||v.note||'')+'</p><div class="step-video-player" data-extra-player="'+(i+1)+'" tabindex="-1"><button class="load-demo" data-extra-play="'+(i+1)+'"><span class="play-symbol" aria-hidden="true">▶</span><strong>Play video</strong><span>'+escapeHTML(v.title)+'</span></button></div><div class="video-byline"><span>By '+escapeHTML(v.creator)+'</span><a href="'+escapeHTML(demoURL(v))+'" target="_blank" rel="noopener">Watch on YouTube</a></div></div>')})}
+function playExtra(i){const v=activeStep()?.videos?.[i],host=document.querySelector('[data-extra-player="'+i+'"]');if(!v||!host)return;const f=document.createElement('iframe');f.src=demoURL(v,true);f.title=v.title+' — '+v.creator;f.allow='autoplay; encrypted-media; picture-in-picture';f.allowFullscreen=true;f.referrerPolicy='strict-origin-when-cross-origin';host.replaceChildren(f);host.focus()}
+const _renderVisualCook3=renderVisualCook;
+renderVisualCook=function(){_renderVisualCook3();renderExtraVideos()};
+const _toggleDemo=toggleDemo;
+toggleDemo=function(){_toggleDemo();renderExtraVideos()};
+document.addEventListener('click',e=>{const b=e.target.closest('[data-extra-play]');if(b)playExtra(Number(b.dataset.extraPlay))});
+$('#recipe-dialog').addEventListener('close',()=>document.querySelectorAll('.step-video-player').forEach(p=>p.replaceChildren()));
